@@ -1,0 +1,56 @@
+body {
+  background-color: hsl(222, 26%, 31%);
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+  color: #fff;
+}
+
+#container {
+  width: 30%;
+  height: 760px;
+  margin: 5em auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 10% 20% 70%;
+  row-gap: 20px;
+}
+
+.themePart {
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calculationPart {
+  width: 100%;
+  background: hsl(224, 36%, 15%);
+  border-radius: 10px;
+}
+
+.numbersPart {
+  width: 100%;
+  background: hsl(223, 31%, 20%);
+  border-radius: 10px;
+}
+
+.tri-state-toggle {
+  display: flex;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 50px;
+}
+
+.button {
+  height: 20px;
+  width: 20px;
+  appearance: none;
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+#one{
+  opacity: 1;
+}
