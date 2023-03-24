@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
-  <title>Frontend Mentor | Calculator app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <script src="index.js" defer></script>
 </head>
-
 <body>
   <div id="container">
-    <div class="themePart">
-     <span>calc</span>
-     <div class="tri-state-toggle">
-      <input class="button" type="radio" name="toggle" id="one" />
-      <input class="button" type="radio" name="toggle" id="two" />
-      <input class="button" type="radio" name="toggle" id="three" />
-     </div>
+    <div class="calculator-screen">
+      <div class="previous-value">123</div>
+      <div class="current-value">456</div>
     </div>
-    <div class="calculationPart">
-
-    </div>
-    <div class="numbersPart">
-
+    <div class="calculator-panel">
+       <button class="calc-button double-button">AC</button>
+       <button class="calc-button">DEL</button>
+       <button class="calc-button">/</button>
+       <button class="calc-button">1</button>
+       <button class="calc-button">2</button>
+       <button class="calc-button">3</button>
+       <button class="calc-button">*</button>
+       <button class="calc-button">4</button>
+       <button class="calc-button">5</button>
+       <button class="calc-button">6</button>
+       <button class="calc-button">+</button>
+       <button class="calc-button">7</button>
+       <button class="calc-button">8</button>
+       <button class="calc-button">9</button>
+       <button class="calc-button">-</button>
+       <button class="calc-button">.</button>
+       <button class="calc-button">0</button>
+       <button class="calc-button double-button">=</button>
     </div>
   </div>
-
-
-
-  <script src="index.js"></script>
 </body>
 
 </html>
