@@ -27,10 +27,12 @@ body{
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
+  word-break: break-all;
 }
 
 .previous-value{
    font-size:1.2rem;
+   word-break: break-all;
 }
 
 .current-value{
@@ -52,6 +54,11 @@ body{
   cursor:pointer;
   font-size: 1.2rem;
   background-color: #025773;
+  transition: background-color .3s linear;
+}
+
+.calc-button:hover{
+  background-color: #017ba4;
 }
 
 .double-button{
