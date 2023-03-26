@@ -65,4 +65,9 @@ body{
   grid-column: span 2;
 }
 
+@media (max-width:1000px){
+   #container{
+    width:90%; 
+   }
+}
 
