@@ -1,12 +1,9 @@
 const numberButtons = document.querySelectorAll('.number-button')
+const operationButtons = document.querySelectorAll('.operation-button')
 const allClearButton = document.getElementById('all-clear-button')
 const deleteButton = document.getElementById('delete-button')
 const equalButton = document.getElementById('equal-button')
 const comaButton = document.getElementById('coma-button')
-const divideButton = document.getElementById('divide-button')
-const multiplyButton = document.getElementById('multiply-button')
-const subtractionButton = document.getElementById('subtraction-button')
-const addingButton = document.getElementById('adding-button')
 const previousValue = document.querySelector('.previous-value')
 const currentValue = document.querySelector('.current-value')
 
@@ -36,14 +33,38 @@ function addComa(){
    updateValue(currentValue, currentDisplayedValue)
 }
 
-function appendOperation(operation){
-  if(currentDisplayedValue === '') return 
+function chooseOperation(operation){
+  if(currentDisplayedValue === '') return
+  if(currentDisplayedValue !== ''){
+     compute()
+  }
   previousDisplayedValue = previousDisplayedValue + currentDisplayedValue + ' ' + operation + ' '
+  currentDisplayedValue = ''
+  updateValue(previousValue, previousDisplayedValue)
+  updateValue(currentValue, currentDisplayedValue)
+}
+
+function compute(operation){
+  let computation; 
+  const prev = parseInt(previousDisplayedValue)
+  const current = parseInt(currentDisplayedValue)
   switch (operation) {
     case '+':
-      previousDisplayedValue = parseInt(previousDisplayedValue) + parseInt(currentDisplayedValue)
-      break;
+      computation = prev + current
+      break
+    case '-':
+      computation = prev - current
+      break 
+    case '*':
+      computation = prev * current
+      break 
+    case '÷':
+      computation = prev / current
+      break 
+    default: return 
+
   }
+  previousDisplayedValue = computation; 
   currentDisplayedValue = ''
   updateValue(currentValue, currentDisplayedValue) 
   updateValue(previousValue, previousDisplayedValue)
@@ -66,17 +87,10 @@ numberButtons.forEach((button) => {
     appendNumber(button.value); 
   })
 })
-divideButton.addEventListener('click', () => {
-  appendOperation(divideButton.value)
-})
-multiplyButton.addEventListener('click', () => {
-  appendOperation(multiplyButton.value)
-})
-addingButton.addEventListener('click', () => {
-  appendOperation(addingButton.value)
-})
-subtractionButton.addEventListener('click', () => {
-  appendOperation(subtractionButton.value)
+operationButtons.forEach((button) => {
+   button.addEventListener('click', () => {
+    chooseOperation(button.value)
+   })
 })
 
 
